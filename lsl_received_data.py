@@ -3,19 +3,21 @@ import time
 import numpy as np
 import pandas as pd
 from pylsl import StreamInlet, resolve_stream
-def lsl_received(queue,path):
+
+
+def lsl_received(queue, path):
     while True:
-        streams = resolve_stream('type', 'EEG')
+        streams = resolve_stream("type", "EEG")
         inlet = StreamInlet(streams[0])
         eeg_data = []
         content = queue.get()
         if content.startswith("st"):
-            flag=0
+            flag = 0
             while True:
                 sample, timestamp = inlet.pull_sample()
                 eeg_data.append(sample)
                 if not queue.empty():
-                    content= queue.get()
+                    content = queue.get()
                     if content == "ending":
                         break
             eeg_data = np.array(eeg_data)
@@ -23,4 +25,3 @@ def lsl_received(queue,path):
         elif content == "del":
             print("quit")
             break
-
