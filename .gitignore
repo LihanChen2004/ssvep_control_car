@@ -13,3 +13,4 @@ wheels/
 dist/
 
 ssvep_car.spec
+temp.csv
