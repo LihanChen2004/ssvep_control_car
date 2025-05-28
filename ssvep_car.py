@@ -47,7 +47,7 @@ if __name__ == "__main__":
     EInfo = {"参与者姓名": "", "性别": "男", "年龄": "22", "小车端口号": "COM"}
 
     dig = gui.DlgFromDict(dictionary=EInfo, sortKeys=False, title=Ename)
-    if dig.OK == False:
+    if dig.OK is False:
         core.quit()
     EInfo["date"] = data.getDateStr()
     EInfo["expName"] = Ename
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     )
 
     EInfo["frameRate"] = win.getActualFrameRate()
-    if EInfo["frameRate"] != None:
+    if EInfo["frameRate"] is not None:
         pre_frame_durate = 1.0 / round(EInfo["frameRate"])
         print("frameRate", round(EInfo["frameRate"]))
     else:
@@ -99,8 +99,6 @@ if __name__ == "__main__":
         depth=0.0,
     )
     keys = keyboard.Keyboard()
-    # Freq = np.array([8.00, 9.00, 10.00, 11.00, 12.00, 13.00, 14.00, 15.00])
-    # Phas = np.array([0, 0.15, 0.3, 0.45, 0.60, 0.75, 0.9, 0])
     Freq = np.array([8.00, 9.00, 10.00, 11.00, 12.00, 13.00])
     Phas = np.array([0, 0.15, 0.3, 0.45, 0.60, 0.75])
     varpy = [600, 90]
@@ -129,7 +127,6 @@ if __name__ == "__main__":
     ]
     size_w = 400
     size_h = 400
-    # order_lst = ['上升', '前进', '起飞', '左转', '右转', '降落', '后退', '下降']
     order_lst = ["亮灯", "前进", "左转", "右转", "后退", "鸣笛"]
     cueClock = core.Clock()
     polygon_0 = visual.Rect(
@@ -664,7 +661,7 @@ if __name__ == "__main__":
         name="trials",
     )
     thisTrial = trials.trialList[0]
-    if thisTrial != None:
+    if thisTrial is not None:
         for paramName in thisTrial:
             exec("{} = thisTrial[paramName]".format(paramName))
     result = 0
@@ -685,7 +682,7 @@ if __name__ == "__main__":
             depth=0.0,
         )
         currentLoop = trials
-        if thisTrial != None:
+        if thisTrial is not None:
             for paramName in thisTrial:
                 exec("{} = thisTrial[paramName]".format(paramName))
         routineTimer.add(1.000000)
