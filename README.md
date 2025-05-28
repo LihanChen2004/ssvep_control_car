@@ -27,6 +27,10 @@ uv sync
 ```
 
 ```shell
+uv tool install pyinstaller
+```
+
+```shell
 pyinstaller -i "resource\cc.ico" -F ssvep_car.py lsl_received_data.py model.py
 ```
 
