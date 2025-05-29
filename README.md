@@ -1,5 +1,7 @@
 # ssvep_control_car
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/LihanChen2004/ssvep_control_car)
+
 ## 1. Overview
 
 基于稳态视觉诱发电位的脑控小车
